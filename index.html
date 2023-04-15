@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="display"></div>
+    <script>
+      students = [
+        { sName: "Luke", sAge: 33, sEmail: "Lu@ke.com" },
+        { sName: "Cara", sAge: 27, sEmail: "Car@a.com" },
+        { sName: "Greef", sAge: 63, sEmail: "Gr@eef.com" },
+        { sName: "Grogu", sAge: 174, sEmail: "Gro@gu.com" },
+        { sName: "Gideon", sAge: 54, sEmail: "Gid@eon.com" },
+        { sName: "Gideon", sAge: 54, sEmail: "Gid@eon.com" },
+      ];
+
+      const myStudentsTable = `
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          </thead>
+        <tbody>
+        ${students
+          .map(
+            (student, ind) => `<tr>
+          <td>${ind + 1} ${student.sName}</td>
+          <td>${student.sAge}</td>
+          <td>${student.sEmail}</td>
+          
+          </tr>`
+          )
+          .join("")}
+        </tbody>
+        </table>
+      `;
+      display.innerHTML = myStudentsTable;
+    </script>
+  </body>
+</html>
